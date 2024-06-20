@@ -14,9 +14,13 @@ class Solution:
 
                 # Removing the last digit from x
                 x=x//10
-                
+            
+            # Checking if reversed number exceeds 32-bit signed integer range
             if rev < -2**31 or rev > 2**31 - 1:
+                # Return 0 if out of range
                 return 0
+            
+            # Return reversed number
             else: return rev
        
         # Case: Negative number
@@ -26,6 +30,8 @@ class Solution:
                 num = x%10
                 rev = rev * 10 + num
                 x=x//10
+            
+            # Check if reversed number exceeds 32-bit signed integer range
             if rev < -2**31 or rev > 2**31 - 1:
                 return 0
             else: return -rev
